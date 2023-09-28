@@ -1,0 +1,10 @@
+C:\Users\sudip\OneDrive\Desktop\CRUD Operation On WordPress Server Using C#\BP_Monitor_C#\BP Data Manager\BP Data Manager\bin\Debug\BP Data Manager.exe.config
+C:\Users\sudip\OneDrive\Desktop\CRUD Operation On WordPress Server Using C#\BP_Monitor_C#\BP Data Manager\BP Data Manager\bin\Debug\BP Data Manager.exe
+C:\Users\sudip\OneDrive\Desktop\CRUD Operation On WordPress Server Using C#\BP_Monitor_C#\BP Data Manager\BP Data Manager\bin\Debug\BP Data Manager.pdb
+C:\Users\sudip\OneDrive\Desktop\CRUD Operation On WordPress Server Using C#\BP_Monitor_C#\BP Data Manager\BP Data Manager\obj\Debug\BP Data Manager.csproj.AssemblyReference.cache
+C:\Users\sudip\OneDrive\Desktop\CRUD Operation On WordPress Server Using C#\BP_Monitor_C#\BP Data Manager\BP Data Manager\obj\Debug\BP_Data_Manager.Properties.Resources.resources
+C:\Users\sudip\OneDrive\Desktop\CRUD Operation On WordPress Server Using C#\BP_Monitor_C#\BP Data Manager\BP Data Manager\obj\Debug\BP Data Manager.csproj.GenerateResource.cache
+C:\Users\sudip\OneDrive\Desktop\CRUD Operation On WordPress Server Using C#\BP_Monitor_C#\BP Data Manager\BP Data Manager\obj\Debug\BP Data Manager.csproj.CoreCompileInputs.cache
+C:\Users\sudip\OneDrive\Desktop\CRUD Operation On WordPress Server Using C#\BP_Monitor_C#\BP Data Manager\BP Data Manager\obj\Debug\BP Data Manager.exe
+C:\Users\sudip\OneDrive\Desktop\CRUD Operation On WordPress Server Using C#\BP_Monitor_C#\BP Data Manager\BP Data Manager\obj\Debug\BP Data Manager.pdb
+C:\Users\sudip\OneDrive\Desktop\CRUD Operation On WordPress Server Using C#\BP_Monitor_C#\BP Data Manager\BP Data Manager\obj\Debug\BP_Data_Manager.frm_main.resources
