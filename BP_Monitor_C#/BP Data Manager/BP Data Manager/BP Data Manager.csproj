@@ -112,6 +112,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Websocket_Client.cs" />
+    <Compile Include="WordPressDB_REST.cs" />
     <Compile Include="WordPressDB.cs" />
     <EmbeddedResource Include="frm_main.resx">
       <DependentUpon>frm_main.cs</DependentUpon>

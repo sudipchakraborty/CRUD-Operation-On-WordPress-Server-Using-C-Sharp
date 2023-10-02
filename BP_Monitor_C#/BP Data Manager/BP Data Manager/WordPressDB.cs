@@ -10,6 +10,7 @@ using MySql.Data.MySqlClient;
 using System;
 using System.Data;
 using MySql.Data.MySqlClient;
+using BP_Data_Manager;
 
 namespace Tools
 {
@@ -47,8 +48,11 @@ namespace Tools
             }           
         }
 
-        public void Get_Data(string sql )
+        public List<bp_data> Get_Data(string sql )
         {
+            List<bp_data> lst_bp_data = new List<bp_data>();
+          
+
             if (Connected)
             {
                 string query = "SELECT * FROM bp_data";
@@ -57,21 +61,22 @@ namespace Tools
 
                 while (reader.Read())
                 {
-                    int Record_No = reader.GetInt32("Record_No");
-                    string User_ID = reader.GetString("User_ID");
-                    string DateTime = reader.GetString("DateTime");
-                    string SIS = reader.GetString("SIS");
-                    string DIA = reader.GetString("DIA");
-                    string PUL = reader.GetString("PUL");
+                    bp_data bp_ = new bp_data();
 
-                    //Console.WriteLine($"Post ID: {postId}");
-                    //Console.WriteLine($"Title: {postTitle}");
-                    //Console.WriteLine($"Content: {postContent}");
-                    //Console.WriteLine();
+                    bp_.Record_No= reader.GetInt32("Record_No");
+                    bp_.User_ID = reader.GetString("User_ID");
+                    bp_.DateTime = reader.GetString("DateTime");
+                    bp_.SIS = reader.GetString("SIS");
+                    bp_.DIA = reader.GetString("DIA");
+                    bp_.PUL = reader.GetString("PUL");
+
+                    lst_bp_data.Add(bp_);
                 }
-
-
+                reader.Close();
+                return lst_bp_data;
             }
+
+            return null;
            
         }
 

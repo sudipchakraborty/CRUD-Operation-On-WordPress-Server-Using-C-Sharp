@@ -42,7 +42,15 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dg_display = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btn_disconnect = new System.Windows.Forms.Button();
             this.btn_connect = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -53,21 +61,20 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.lst_msg = new System.Windows.Forms.ListBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.btn_disconnect = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btn_read_all = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.lbl_record_total = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dg_display)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // txt_sys
@@ -212,13 +219,58 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.dg_display);
             this.groupBox2.Location = new System.Drawing.Point(470, 64);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(690, 553);
+            this.groupBox2.Size = new System.Drawing.Size(690, 363);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "History";
+            // 
+            // dg_display
+            // 
+            this.dg_display.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dg_display.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column6,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5});
+            this.dg_display.Location = new System.Drawing.Point(6, 19);
+            this.dg_display.Name = "dg_display";
+            this.dg_display.Size = new System.Drawing.Size(651, 330);
+            this.dg_display.TabIndex = 0;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Record No";
+            this.Column1.Name = "Column1";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "User ID";
+            this.Column6.Name = "Column6";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "DateTime";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "SIS";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "DIA";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "PUL";
+            this.Column5.Name = "Column5";
             // 
             // groupBox3
             // 
@@ -239,6 +291,17 @@
             this.groupBox3.TabIndex = 10;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "DataBase";
+            // 
+            // btn_disconnect
+            // 
+            this.btn_disconnect.ForeColor = System.Drawing.Color.Maroon;
+            this.btn_disconnect.Location = new System.Drawing.Point(128, 129);
+            this.btn_disconnect.Name = "btn_disconnect";
+            this.btn_disconnect.Size = new System.Drawing.Size(98, 42);
+            this.btn_disconnect.TabIndex = 8;
+            this.btn_disconnect.Text = "Disconnect";
+            this.btn_disconnect.UseVisualStyleBackColor = true;
+            this.btn_disconnect.Click += new System.EventHandler(this.btn_disconnect_Click);
             // 
             // btn_connect
             // 
@@ -335,32 +398,6 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Search";
             // 
-            // btn_disconnect
-            // 
-            this.btn_disconnect.ForeColor = System.Drawing.Color.Maroon;
-            this.btn_disconnect.Location = new System.Drawing.Point(128, 129);
-            this.btn_disconnect.Name = "btn_disconnect";
-            this.btn_disconnect.Size = new System.Drawing.Size(98, 42);
-            this.btn_disconnect.TabIndex = 8;
-            this.btn_disconnect.Text = "Disconnect";
-            this.btn_disconnect.UseVisualStyleBackColor = true;
-            this.btn_disconnect.Click += new System.EventHandler(this.btn_disconnect_Click);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column6,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5});
-            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(651, 528);
-            this.dataGridView1.TabIndex = 0;
-            // 
             // btn_read_all
             // 
             this.btn_read_all.Location = new System.Drawing.Point(115, 178);
@@ -371,42 +408,64 @@
             this.btn_read_all.UseVisualStyleBackColor = true;
             this.btn_read_all.Click += new System.EventHandler(this.btn_read_all_Click);
             // 
-            // Column1
+            // groupBox6
             // 
-            this.Column1.HeaderText = "Record No";
-            this.Column1.Name = "Column1";
+            this.groupBox6.Controls.Add(this.pictureBox1);
+            this.groupBox6.Location = new System.Drawing.Point(471, 440);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(688, 187);
+            this.groupBox6.TabIndex = 13;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "GRAPH VIEW";
             // 
-            // Column6
+            // pictureBox1
             // 
-            this.Column6.HeaderText = "User ID";
-            this.Column6.Name = "Column6";
+            this.pictureBox1.BackColor = System.Drawing.Color.Black;
+            this.pictureBox1.Location = new System.Drawing.Point(10, 25);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(664, 139);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
-            // Column2
+            // button1
             // 
-            this.Column2.HeaderText = "DateTime";
-            this.Column2.Name = "Column2";
+            this.button1.Location = new System.Drawing.Point(1024, 33);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(65, 25);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Print";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // Column3
+            // button2
             // 
-            this.Column3.HeaderText = "SIS";
-            this.Column3.Name = "Column3";
+            this.button2.Location = new System.Drawing.Point(1095, 33);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(65, 25);
+            this.button2.TabIndex = 14;
+            this.button2.Text = "Export";
+            this.button2.UseVisualStyleBackColor = true;
             // 
-            // Column4
+            // lbl_record_total
             // 
-            this.Column4.HeaderText = "DIA";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "PUL";
-            this.Column5.Name = "Column5";
+            this.lbl_record_total.AutoSize = true;
+            this.lbl_record_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_record_total.ForeColor = System.Drawing.Color.Black;
+            this.lbl_record_total.Location = new System.Drawing.Point(820, 44);
+            this.lbl_record_total.Name = "lbl_record_total";
+            this.lbl_record_total.Size = new System.Drawing.Size(114, 16);
+            this.lbl_record_total.TabIndex = 15;
+            this.lbl_record_total.Text = "Total Record=123";
             // 
             // frm_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
-            this.ClientSize = new System.Drawing.Size(1230, 640);
+            this.ClientSize = new System.Drawing.Size(1184, 640);
+            this.Controls.Add(this.lbl_record_total);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -419,11 +478,13 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dg_display)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -457,7 +518,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button btn_disconnect;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dg_display;
         private System.Windows.Forms.Button btn_read_all;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
@@ -465,6 +526,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label lbl_record_total;
     }
 }
 

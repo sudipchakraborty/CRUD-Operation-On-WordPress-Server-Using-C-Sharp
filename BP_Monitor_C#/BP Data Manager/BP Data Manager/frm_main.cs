@@ -58,7 +58,24 @@ namespace BP_Data_Manager
                 db.Connect();
                 msg.push("Connected With Database OK");
             }
-            db.Get_Data("xdfsdf");
+
+            List<bp_data> bp_Datas;
+            bp_Datas= db.Get_Data("jgjghj");
+
+            dg_display.Rows.Clear();
+            dg_display.Rows.Add(bp_Datas.Count);
+            for(int i = 0; i < bp_Datas.Count; i++)
+            {
+                dg_display[0, i].Value=bp_Datas[i].Record_No.ToString();
+                dg_display[1, i].Value=bp_Datas[i].User_ID.ToString();
+                dg_display[2, i].Value=bp_Datas[i].DateTime.ToString();
+                dg_display[3, i].Value=bp_Datas[i].SIS.ToString();
+                dg_display[4, i].Value=bp_Datas[i].DIA.ToString();
+                dg_display[5, i].Value=bp_Datas[i].PUL.ToString();
+            }
+
+            lbl_record_total.Text="Total Record Count="+bp_Datas.Count.ToString();
+
         }
     }
 }
