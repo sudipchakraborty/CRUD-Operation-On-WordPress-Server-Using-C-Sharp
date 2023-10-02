@@ -11,17 +11,73 @@ using System;
 using System.Data;
 using MySql.Data.MySqlClient;
 
-namespace WindowsFormsApp1
+namespace Tools
 {
     public class WordPressDB
     {
+        MySqlConnection connection;
+       public bool Connected = false; 
+
         public WordPressDB()
         {
 
         }
 
+        public void Connect()
+        {
+            string connectionString = "Server=localhost;Port=10017;Database=local;Uid=root;Pwd=root;";
+            connection = new MySqlConnection(connectionString);
+            connection.Open();
+            if (connection.State==ConnectionState.Open)
+            {
+                Connected= true;
+            }
+            else
+            {
+                Connected= false;
+            }          
+        }
 
-        public bool Connect()
+        public void Disconnect()
+        {
+           if(Connected)
+            {
+                connection.Close(); 
+                Connected = false;
+            }           
+        }
+
+        public void Get_Data(string sql )
+        {
+            if (Connected)
+            {
+                string query = "SELECT * FROM bp_data";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    int Record_No = reader.GetInt32("Record_No");
+                    string User_ID = reader.GetString("User_ID");
+                    string DateTime = reader.GetString("DateTime");
+                    string SIS = reader.GetString("SIS");
+                    string DIA = reader.GetString("DIA");
+                    string PUL = reader.GetString("PUL");
+
+                    //Console.WriteLine($"Post ID: {postId}");
+                    //Console.WriteLine($"Title: {postTitle}");
+                    //Console.WriteLine($"Content: {postContent}");
+                    //Console.WriteLine();
+                }
+
+
+            }
+           
+        }
+
+
+
+        public bool Connect2()
         {
             string connectionString = "Server=localhost;Port=10017;Database=local;Uid=root;Pwd=root;";
 
@@ -134,4 +190,3 @@ namespace WindowsFormsApp1
 //    }
 //}
 ////////////////////////////////////////////////////////////////////////////////////////
-
